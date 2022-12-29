@@ -24,9 +24,9 @@ const Content =(props)=>{
 function App(props) {
   const [counter, setCounter] = useState(0)
  
-  setTimeout(() => {
+  let updateValue=() => {
   setCounter(counter +1)  
-  }, 1000);
+  };
 
   console.log('rendering...',counter)
   const course ={
@@ -47,6 +47,8 @@ function App(props) {
   
   return (
     <div>
+      <button onClick={updateValue}>Plus</button>
+      <button onClick={()=> setCounter(0)}>Reset</button>
       <div>{counter}</div>
     <Header course={course.name}/>
     <Content name={course.parts[0].name} exercise={course.parts[0].exercises}/>
